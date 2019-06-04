@@ -80,7 +80,7 @@ int my_abs(int n) {
 int sum(int n) {
     int i = 0;
     int result = 0;
-    while (i <= n){
+    while (i < n){
         result += i;
         i++;
     }
@@ -93,7 +93,7 @@ int sum(int n) {
  * */
 int sum2(int n) {
     int result = 0;
-    for (int i=0; i<=n; i++)
+    for (int i=0; i<n; i++)
         result += i;
     return result;
 }
