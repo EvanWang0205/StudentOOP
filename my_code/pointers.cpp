@@ -45,7 +45,7 @@ Thing** create_array_of_things(int n) {
 
 void print_all_things(Thing** Things, int n) {
 	for (int i = 0; i <= n; i++) {
-		cout << things[i] << " ";
+		cout << Things[i] << " ";
 	}
 }
 
