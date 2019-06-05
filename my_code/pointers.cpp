@@ -17,7 +17,7 @@ void inc_by_value(int n) {
 
 
 void inc_with_pointer(int* iptr) {
-	++(&ipter);
+	++(&iptr);
 }
 
 
@@ -43,7 +43,7 @@ Thing** create_array_of_things(int n) {
 
 
 
-void print_all_things(Thing** things, int n) {
+void print_all_things(Thing** Things, int n) {
 	for (int i = 0; i <= n; i++) {
 		cout << things[i] << " ";
 	}
@@ -74,7 +74,7 @@ void assignTA(Student* s, Student* ta) {
 
 
 void printTAs(vector<Student*>& students) {
-    for (Student* student : student){
+    for (Student* student : students){
         if(student-> ta == nullptr){
             cout << student -> name << "has no TA\n";
         }
