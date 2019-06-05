@@ -17,7 +17,7 @@ void inc_by_value(int n) {
 
 
 void inc_with_pointer(int* iptr) {
-	++(&iptr);
+	++(*iptr);
 }
 
 
@@ -35,7 +35,7 @@ void inc_with_reference(int& n) {
 Thing** create_array_of_things(int n) {
 	Thing** array = new Thing*[n];
 		for (int i = 0; i <= n; i++) {
-			array[i] = new thing(i);
+			array[i] = new Thing(i);
 	}
 	return array;
 
