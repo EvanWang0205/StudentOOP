@@ -33,7 +33,7 @@ void inc_with_reference(int& n) {
 
 
 Thing** create_array_of_things(int n) {
-	Thing** array = new Thing*[n]
+	Thing** array = new Thing*[n];
 		for (int i = 0, i <= n, i++) {
 			array[i] = new thing(i);
 	}
@@ -63,17 +63,17 @@ void delete_all_things(Thing** things, int n) {
 	for (int i = 1, i <= n, i++) {
 		delete things[i];
 	}
-	delete[] things
+	delete[] things;
 }
 
 
 
-void assignTA(Student& s, Student& ta) {
-    s -> ta = ta
+void assignTA(Student* s, Student* ta) {
+    s -> ta = ta;
 }
 
 
-void printTAs(vector<Student> students) {
+void printTAs(vector<Student*>& students) {
     for (Student* student : student){
         if(student-> ta == nullptr){
             cout << student -> name << "has no TA\n";
