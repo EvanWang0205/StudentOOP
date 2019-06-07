@@ -9,7 +9,7 @@ using namespace std;
 
 
 void inc_by_value(int n) {
-	++n;
+    ++n;
 }
 
 
@@ -17,7 +17,7 @@ void inc_by_value(int n) {
 
 
 void inc_with_pointer(int* iptr) {
-	++(*iptr);
+    ++(*iptr);
 }
 
 
@@ -25,7 +25,7 @@ void inc_with_pointer(int* iptr) {
 
 
 void inc_with_reference(int& n) {
-	++n;
+    ++n;
 }
 
 
@@ -33,37 +33,37 @@ void inc_with_reference(int& n) {
 
 
 Thing** create_array_of_things(int n) {
-	Thing** array = new Thing*[n];
-		for (int i = 0; i <= n; i++) {
-			array[i] = new Thing(i);
-	}
-	return array;
-
+    Thing** array = new Thing*[n];
+    for (int i = 0; i <= n; i++) {
+        array[i] = new Thing(i);
+    }
+    return array;
+    
 }
 
 
 
 void print_all_things(Thing** Things, int n) {
-	for (int i = 0; i <= n; i++) {
-		cout << Things[i] << " ";
-	}
+    for (int i = 0; i <= n; i++) {
+        cout << Things[i] << " ";
+    }
 }
 
 
 
 void double_all_things(Thing** things, int n) {
-	for (int i = 0; i <= n; i++) {
-		things[i]->val *= 2;
-	}
+    for (int i = 0; i <= n; i++) {
+        things[i]->val *= 2;
+    }
 }
 
 
 
 void delete_all_things(Thing** things, int n) {
-	for (int i = 1; i <= n; i++) {
-		delete things[i];
-	}
-	delete[] things;
+    for (int i = 1; i <= n; i++) {
+        delete things[i];
+    }
+    delete[] things;
 }
 
 
@@ -82,5 +82,5 @@ void printTAs(vector<Student*>& students) {
             cout << student -> name << "has  TA" << student -> ta -> name << endl;
         }
     }
-
+    
 }
