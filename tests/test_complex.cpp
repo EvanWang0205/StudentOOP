@@ -17,7 +17,7 @@ int main() {
             cerr << "Bad input format\n";
             exit(1);
         }
-        if(DEBUG)
+        if(my_DEBUG)
         {
             cout << "c1 = " << c1 << endl;
         }
