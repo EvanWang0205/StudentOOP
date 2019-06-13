@@ -26,7 +26,7 @@ int main() {
         assert(c2.get_real() == 43.2);
         assert(c2.get_imag() == 58.9);
     
-        if(DEBUG)
+        if(my_DEBUG)
         {
             cout << "c2 = " << c2 << endl;
         }
