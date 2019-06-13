@@ -68,8 +68,8 @@ Complex Complex::operator*(const int i) {
 }
 
 Complex Complex::operator-=(const Complex& c){
-    real -= c.real;
-    imag -= c.imag;
+    real -= c.get_real();
+    imag -= c.get_imag();
     return *this;
     //return Complex(real, imag)
 }
