@@ -35,7 +35,7 @@ void inc_with_reference(int& n) {
 Thing** create_array_of_things(int n) {
     Thing** array = new Thing*[n];
     for (int i = 0; i <= n; i++) {
-        array[i] = new Thing(i);
+        array[i] = new &Thing(i);
     }
     return array;
     
@@ -45,15 +45,15 @@ Thing** create_array_of_things(int n) {
 
 void print_all_things(Thing** Things, int n) {
     for (int i = 0; i <= n; i++) {
-        cout << Things[i] << " ";
+        cout << *Things[i] << " ";
     }
 }
 
-
+Thing
 
 void double_all_things(Thing** things, int n) {
     for (int i = 0; i <= n; i++) {
-        things[i]->val *= 2;
+        things[i] -> val *= 2;
     }
 }
 

@@ -44,7 +44,7 @@ Complex::operator bool() const {
 
 Complex& Complex::operator++() {
     ++real;
-    return *this;
+    return *this; //return Complex(real, imag)
 }
 
 Complex Complex::operator++(int dummy) {
