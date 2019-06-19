@@ -20,7 +20,7 @@ MyVec::MyVec() {
 MyVec::MyVec(const MyVec& v2) {
     sz  = v2.sz;
     capacity = v2.capacity;
-    data = new int(capacity);
+    data = new int[capacity];
     for (int i = 0; i <sz; i++)
         data[i] = v2.data[i];
 }
@@ -36,7 +36,7 @@ MyVec& MyVec::operator=(const MyVec& v2) {
             delete[] data;
         sz = v2.sz;
         capacity = v2.capacity;
-        data = new int(capacity);
+        data = new int[capacity];
         for (int i = 0; i <sz; i++)
             data[i] = v2.data[i];
         
@@ -65,7 +65,12 @@ bool operator==(MyVec& v1, MyVec& v2) {
  * */
 void MyVec::push_back(int val) {
     if (sz == capacity){
+        int* oldData = data;
         capacity *= 2;
+        data = new int[capacity];
+        for (int i = 0; i < sz; i++)
+            data[i] = oldData[i];
+        delete[] oldData;
         data[sz ++ ] = val;
     }
     else
