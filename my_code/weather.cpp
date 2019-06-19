@@ -59,6 +59,16 @@ void Weather::add_reading(WReading wr){
     wreadings.push_back(wr);
 }
 
+void WReading::display_image(){
+    images->display();
+}
+
+void Weather::display_images(){
+    for (WReading i : wreadings){
+        i.display_image();
+    }
+}
+
 
 ostream& operator<<(ostream& os, const Weather& w){
     os << w.get_name() << "rating : " << w.get_rating() << "; location: "
@@ -137,8 +147,16 @@ void Image::copy_fields(const Image& img2) {
  * Setting `display() = 0` here makes this an abstract
  * class that can't be implemented.
  * */
-string Image::display(std::string s) {
-    return "Displaying image " + s;
+void Image::display() {
+    cout << "Displaying image";
+}
+
+void Gif::display(){
+    cout << "Displaying Gif ";
+}
+
+void Png::display(){
+    cout << "Displaying png";
 }
 
 
