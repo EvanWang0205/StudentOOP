@@ -60,7 +60,7 @@ void Weather::add_reading(WReading wr){
 }
 
 void WReading::display_image(){
-    images->display();
+    images -> display();
 }
 
 void Weather::display_images(){
@@ -85,8 +85,6 @@ const double C_to_F = 9 / 5;
 double WReading::get_tempF(){
     return temperature * C_to_F + 32;
 }
-
-
 
 
 // Image (copy path)
@@ -159,4 +157,7 @@ void Png::display(){
     cout << "Displaying png";
 }
 
+void Jpeg::display(){
+    cout << "Displaying Jpeg";
+}
 

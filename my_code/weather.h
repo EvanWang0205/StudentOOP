@@ -23,16 +23,20 @@ private:
     int year;
 };
 
+class Image;
+
 class WReading{
 friend std::ostream& operator<<(std::ostream& os, const WReading& wr);
 public:
-    WReading(Date dt, double temp, double hum, double ws):
-        date(dt), temperature(temp),humidity(hum),windspeed(ws){}
+    WReading(Date dt, double temp, double hum, double ws, Image* images):
+        date(dt), temperature(temp),humidity(hum),windspeed(ws), images(images){}
     
     double get_tempF();
     double get_tempC(){return temperature;};
+    void display_image();
 
 private:
+    Image* images;
     Date date;
     double temperature;
     double humidity;
@@ -56,6 +60,7 @@ public:
     void add_reading(WReading wr);
     int get_heat_index();
     int get_wind_chill();
+    void display_images();
 private:
     std::vector<WReading> wreadings;
     std::string station_nm;
@@ -76,7 +81,7 @@ public:
      * Setting `display() = 0` here makes this an abstract
      * class that can't be implemented.
      * */
-    std::string display(std::string s);
+    virtual void display();
     /*
      * If we don't want virtual method lookup, we
      * could just declare:
@@ -94,4 +99,25 @@ private:
     void copy_fields(const Image& img2);
 };
 
+class Gif : public Image{
+public:
+    Gif(int w, int h, std::string flnm, int cl=0) : Image(w, h, flnm), compress_level(cl){};
+    void display();
+private:
+    int compress_level;
+};
+
+class Png : public Image{
+public:
+    Png(int w, int h, std::string flnm) : Image(w,h,flnm){};
+    void display();
+    };
+
+class Jpeg : public Image{
+public:
+    Jpeg(int w, int h, std::string flnm) : Image(w,h,flnm){};
+    void display();
+};
+
 #endif
+
