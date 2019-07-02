@@ -139,6 +139,7 @@ Node* duplicate(Node* head) {
 Node* join(Node*& list1, Node* list2) {
     Node* last_list1 = last(list1);
     last_list1->next = list2;
+    return list1;
 }
 
 Node* reverse(Node* curr, Node* new_next){
